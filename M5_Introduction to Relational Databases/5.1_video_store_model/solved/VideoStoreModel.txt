@@ -1,0 +1,28 @@
+Customer as c
+-
+CustomerID PK int
+Name string
+PhoneNumber string
+MaximumRatingAllowed string
+CurrentBalance money
+
+Video as v
+-
+VideoID PK int
+Title string
+ReleaseYear int
+Rating int
+CurrentOnHand int
+RentalPrice money
+
+Rental as r
+----
+RentalID PK int
+RentalDateTime datetime
+CustomerID int FK >- Customer.CustomerID
+VideoID int FK >- Video.VideoID
+RentalPrice money
+DueDate datetime
+ReturnDate datetime
+LateFee money
+LateFeePaid bool

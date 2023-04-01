@@ -1,0 +1,39 @@
+Customer as c
+-
+CustomerID PK int
+Name string
+EmailAddress string
+
+CustomerAddress as ca
+-
+CustomerAddressId int PK
+CustomerID int FK >- Customer.CustomerID
+AddressLine1 string
+AddressLine2 string
+
+Product as p
+-
+ProductID PK int
+Name string
+Description string
+Price money
+ProductCategroyID int FK >- ProductCategory.ProductCategoryID
+
+ProductCategory as pc
+-
+ProductCategoryID PK int
+Name string
+Description string
+
+Cart as ct
+-
+CartID int PK
+CustomerID int FK >- Customer.CustomerID
+TotalPrice money
+
+CartItem as cti
+-
+CartItemId int PK
+CartID int FK >- Cart.CartID
+ProductID int FK >- Product.ProductID
+Quantity int
